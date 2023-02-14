@@ -1,0 +1,111 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+  inset-inline-end: 0;
+  inset-inline-start: 0;
+}
+
+.modalWrap {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  overflow: auto;
+  outline: 0;
+  inset-inline-end: 0;
+  inset-inline-start: 0;
+  .modal {
+    position: relative;
+    top: 100px;
+    width: 520px;
+    max-width: calc(100vw - 32px);
+    margin: 0 auto;
+    padding: 0;
+    padding-bottom: 24px;
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 14px;
+    list-style: none;
+    pointer-events: none;
+  }
+  .modalContent {
+    position: relative;
+    padding: 20px 24px;
+    background-color: #ffffff;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%),
+      0 9px 28px 8px rgb(0 0 0 / 5%);
+    pointer-events: auto;
+  }
+  .modalclose {
+    position: absolute;
+    top: 17px;
+    z-index: 1010;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.45);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1;
+    background: transparent;
+    border: 0;
+    border-radius: 4px;
+    outline: 0;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+    inset-inline-end: 17px;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+  .modalHeader {
+    margin-bottom: 8px;
+    color: rgba(0, 0, 0, 0.88);
+    background: #ffffff;
+    border-radius: 8px 8px 0 0;
+    .modalTitle {
+      margin: 0;
+      color: rgba(0, 0, 0, 0.88);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+  }
+  .modalBody {
+    font-size: 14px;
+    word-wrap: break-word;
+  }
+  .footer {
+    margin-top: 12px;
+    text-align: end;
+    background: transparent;
+    button + button {
+      margin-bottom: 0;
+      margin-inline-start: 8px;
+    }
+  }
+}
+.show-enter {
+  transform: scale(0.9) translateY(50%);
+  opacity: 0.01;
+}
+.show-enter-active {
+  transform: scale(1) translateY(0%);
+  opacity: 1;
+  transition: all 300ms ease-out;
+}
+.show-exit {
+  transform: scale(1) translateY(0%);
+  opacity: 1;
+}
+.show-exit-active {
+  transform: scale(0.9) translateY(50%);
+  opacity: 0.01;
+  transition: all 300ms ease-out;
+}
