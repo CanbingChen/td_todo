@@ -1,0 +1,31 @@
+.navs {
+  box-sizing: border-box;
+  width: 200px;
+  height: 100%;
+  overflow: auto;
+  border: 1px solid #616161;
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    .navItem {
+      text-decoration: none;
+      color: #000;
+      font-size: 15px;
+
+      &.active {
+        color: #3561f4;
+        li {
+          border-left-color: #3561f4;
+        }
+      }
+    }
+  }
+  li {
+    height: 40px;
+    border-bottom: 1px solid #616161;
+    border-left: 4px solid transparent;
+    line-height: 40px;
+    padding: 0 8px;
+  }
+}

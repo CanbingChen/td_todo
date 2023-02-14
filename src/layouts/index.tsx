@@ -1,21 +1,14 @@
-import { Link, Outlet } from 'umi';
-import styles from './index.less';
+import { Link, Outlet } from "umi";
+import Menu from "@/components/Menu";
+import styles from "./index.less";
 
 export default function Layout() {
   return (
-    <div className={styles.navs}>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/docs">Docs</Link>
-        </li>
-        <li>
-          <a href="https://github.com/umijs/umi">Github</a>
-        </li>
-      </ul>
-      <Outlet />
+    <div className={styles.wrapper}>
+      <Menu />
+      <div className={styles.content}>
+        <Outlet />
+      </div>
     </div>
   );
 }
