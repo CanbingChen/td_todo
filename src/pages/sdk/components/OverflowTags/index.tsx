@@ -1,5 +1,5 @@
 import MatchSpan from "@/components/MatchSpan";
-import { Tag } from "antd";
+import { Tag, Tooltip } from "antd";
 import Overflow from "rc-overflow";
 import { useCallback } from "react";
 import styles from "./index.less";
@@ -17,7 +17,11 @@ const OverflowTags = ({ data }) => {
     if (items.length === 0) {
       return null;
     } else {
-      return <span>+{items.length}</span>;
+      return (
+        <Tooltip title={items.join(",")}>
+          <span>+{items.length}</span>
+        </Tooltip>
+      );
     }
   }, []);
 

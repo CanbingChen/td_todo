@@ -1,3 +1,4 @@
+import Icon from "@/components/Icon";
 import Modal from "@/components/Modal";
 import { DEFAULT_TAG_OPTIONS } from "@/pages/sdk/constants";
 import { Form, Input, Select } from "antd";
@@ -55,7 +56,7 @@ const EditModal: FC<Props> = ({
         autoComplete="off"
       >
         <Form.Item
-          label="Client name"
+          label="Client name:"
           name="clientName"
           rules={[
             { required: true, message: "Please input your client name!" },
@@ -65,7 +66,7 @@ const EditModal: FC<Props> = ({
         </Form.Item>
 
         <Form.Item
-          label="Board"
+          label="Board:"
           name="boardName"
           rules={[
             { required: true, message: "Please input your  Board name!" },
@@ -74,7 +75,19 @@ const EditModal: FC<Props> = ({
           <Input placeholder="Please input your  Board name" />
         </Form.Item>
 
-        <Form.Item label="tags" name="tags">
+        <Form.Item
+          label={
+            <>
+              Tags{" "}
+              <Icon
+                type="icon-a-ESMiconset_info2"
+                style={{ fontSize: "20px" }}
+              />
+              :
+            </>
+          }
+          name="tags"
+        >
           <Select
             options={DEFAULT_TAG_OPTIONS}
             mode="multiple"
@@ -83,7 +96,7 @@ const EditModal: FC<Props> = ({
         </Form.Item>
 
         <Form.Item
-          label="Requestor"
+          label="Requestor:"
           name="requestor"
           rules={[{ required: true, message: "Please input your requestor!" }]}
         >
