@@ -8,9 +8,9 @@ export default {
     "data|30": [
       {
         "id|+1": 1,
-        clientName: "11111", // 产品线id
-        boardName: "boardName",
-        tags: ["story", "feature", "nick"],
+        clientName: "client@integer(0,100)", // 产品线id
+        boardName: "boardName@integer(0,100)",
+        "tags|1-4": ["story", "feature", "nick", "nick2", "nick3"],
         requestor: "Kleven Yu",
       },
     ],

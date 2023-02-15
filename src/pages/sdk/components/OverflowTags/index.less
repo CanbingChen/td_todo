@@ -1,0 +1,40 @@
+.wrapper {
+  :global {
+    .rc-overflow {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+      .rc-overflow-item {
+        flex: none;
+        width: fit-content;
+        min-width: 10px;
+        max-width: calc(100% - 30px);
+        overflow: hidden;
+        color: #333;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        word-break: keep-all;
+        &.rc-overflow-item-rest {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          span {
+            display: inline-block;
+            width: 24px;
+            height: 16px;
+            color: #666;
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+            background: #f5f5f5;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+}

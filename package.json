@@ -9,11 +9,17 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@types/react-virtualized-auto-sizer": "^1.0.1",
+    "@types/react-window": "^1.8.5",
     "ahooks": "^3.7.4",
     "antd": "^5.2.1",
     "classnames": "^2.3.2",
+    "immer": "^9.0.19",
     "mockjs": "^1.1.0",
+    "rc-overflow": "^1.2.8",
     "react-transition-group": "^4.4.5",
+    "react-virtualized-auto-sizer": "^1.0.7",
+    "react-window": "^1.8.8",
     "umi": "^4.0.51",
     "umi-request": "^1.4.0"
   },

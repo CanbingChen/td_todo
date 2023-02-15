@@ -20,6 +20,7 @@ interface Props {
   footer?: React.ReactNode;
   destroyOnClose?: boolean;
   onCancel?: (e: React.MouseEvent) => void;
+  onConfirm?: (e: React.MouseEvent) => void;
 }
 const Modal: FC<Props> = ({
   visible,
@@ -28,6 +29,7 @@ const Modal: FC<Props> = ({
   onCancel,
   footer,
   destroyOnClose,
+  onConfirm,
 }) => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [innerVisible, changeVisible] = useState(false);
@@ -37,11 +39,20 @@ const Modal: FC<Props> = ({
   }, [visible]);
 
   const handleClose = useCallback(
-    (e: React.MouseEvent) => {
+    (e?: React.MouseEvent) => {
       changeVisible(false);
       if (onCancel) onCancel(e);
     },
     [onCancel]
+  );
+
+  const handleConfirm = useCallback(
+    (e) => {
+      if (onConfirm) {
+        onConfirm(e);
+      }
+    },
+    [onConfirm]
   );
 
   const onAnimateLeave = useCallback(() => {
@@ -67,10 +78,12 @@ const Modal: FC<Props> = ({
         <Button danger onClick={handleClose}>
           close
         </Button>
-        <Button type="primary">confirm</Button>
+        <Button type="primary" onClick={handleConfirm}>
+          confirm
+        </Button>
       </>
     );
-  }, [footer, handleClose]);
+  }, [footer, handleClose, handleConfirm]);
   if (destroyOnClose && !innerVisible) return null;
   return (
     <Portal>
