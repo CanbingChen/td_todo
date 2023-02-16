@@ -62,7 +62,7 @@ const Sdk = () => {
           };
         } else {
           draft.unshift({
-            id,
+            id: Date.now(),
             ...rowData,
           });
         }
